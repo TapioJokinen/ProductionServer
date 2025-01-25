@@ -7,12 +7,7 @@ services:
       - "443:443"
     networks:
       - reverse_proxy
-    volumes:
-      - jokinen_dev:/www/data/jokinen_dev
     restart: unless-stopped
-
-volumes:
-  jokinen_dev:
 
 networks:
   reverse_proxy:
