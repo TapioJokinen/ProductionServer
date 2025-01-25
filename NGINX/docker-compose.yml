@@ -1,0 +1,14 @@
+services:
+  reverse_proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "443:443"
+    networks:
+      - reverse_proxy
+    restart: unless-stopped
+
+networks:
+  reverse_proxy:
+    name: reverse_proxy

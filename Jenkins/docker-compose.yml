@@ -1,0 +1,19 @@
+services:
+  jenkins_docker:
+    image: jenkins/jenkins:lts-jdk17
+    environment:
+      - JENKINS_OPTS=--prefix=/jenkins
+    ports:
+      - "8080"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    networks:
+      - reverse_proxy
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:
+
+networks:
+  reverse_proxy:
+    external: true
