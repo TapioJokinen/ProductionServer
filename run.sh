@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
-# Start NGINX
+set -e
 
 cd ~/ProductionServer/NGINX
 
 docker compose up --build -d
 
-# Start Jenkins
 cd ~/ProductionServer/Jenkins
 
 docker compose up -d
