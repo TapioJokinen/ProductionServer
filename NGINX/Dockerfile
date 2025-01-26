@@ -6,6 +6,8 @@ WORKDIR /
 
 RUN mkdir -p /var/ssl
 
+RUN mkdir -p /www/data/jokinen.dev
+
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 COPY ./conf.d /etc/nginx/conf.d
