@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "443:443"
+    volumes:
+      - data:/www/data
     networks:
       - reverse_proxy
     restart: unless-stopped
@@ -12,3 +14,7 @@ services:
 networks:
   reverse_proxy:
     name: reverse_proxy
+
+volumes:
+  data:
+    name: data
